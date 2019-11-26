@@ -22,5 +22,6 @@
     <string name="to_email">my-tshirt@sda.ie</string>
     <string name="email_subject">Order Request </string>
     <string name="border">border</string>
+    <string name="logo">Logo</string>
 
 </resources>
