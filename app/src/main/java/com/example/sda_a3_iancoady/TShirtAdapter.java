@@ -16,6 +16,8 @@ package com.example.sda_a3_iancoady;
 */
 
 
+import android.view.View;
+
 /**
  * {@link TShirtAdapter} represents a single Android platform release.
  * Each object has 3 properties: name, version number, and image resource ID.

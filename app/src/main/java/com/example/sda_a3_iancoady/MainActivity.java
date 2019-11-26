@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
@@ -16,6 +17,7 @@ import com.google.android.material.tabs.TabLayout;
  */
 public class MainActivity extends AppCompatActivity {
     public static final int BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT = 1;
+    RelativeLayout itemParentLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,4 +38,5 @@ public class MainActivity extends AppCompatActivity {
         Context context = getApplicationContext();
         Toast.makeText(context, "Please swipe to see products!", Toast.LENGTH_LONG).show();
     }
+
 }

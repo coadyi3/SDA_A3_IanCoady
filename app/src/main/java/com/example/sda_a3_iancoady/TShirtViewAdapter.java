@@ -23,6 +23,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,9 +39,9 @@ public class TShirtViewAdapter extends RecyclerView.Adapter<TShirtViewAdapter.Vi
     //add array for each item\
     private ArrayList<TShirtAdapter> tShirts;
 
-    TShirtViewAdapter(Context mNewContext, ArrayList<TShirtAdapter> mflavor) {
+    TShirtViewAdapter(Context mNewContext, ArrayList<TShirtAdapter> tShirts) {
         this.mNewContext = mNewContext;
-        this.tShirts = mflavor;
+        this.tShirts = tShirts;
     }
 
     //declare methods
@@ -58,6 +59,13 @@ public class TShirtViewAdapter extends RecyclerView.Adapter<TShirtViewAdapter.Vi
         viewHolder.tShirtDesc.setText(tShirts.get(position).getTShirtDesc());
         viewHolder.tShirtPrice.setText(tShirts.get(position).getTShirtPrice());
         viewHolder.tShirtImage.setImageResource(tShirts.get(position).getImageResourceId());
+
+        viewHolder.itemParentLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(mNewContext, "You clicked on the " + tShirts.get(position).getTShirtDesc() +" t-shirt which costs " + tShirts.get(position).getTShirtPrice(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -82,7 +90,6 @@ public class TShirtViewAdapter extends RecyclerView.Adapter<TShirtViewAdapter.Vi
             tShirtDesc = itemView.findViewById(R.id.shirtDesc);
             tShirtPrice = itemView.findViewById(R.id.shirtPrice);
             itemParentLayout = itemView.findViewById(R.id.listItemLayout);
-
         }
     }
 }

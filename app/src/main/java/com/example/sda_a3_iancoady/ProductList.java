@@ -4,9 +4,12 @@ package com.example.sda_a3_iancoady;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,6 +52,7 @@ public class ProductList extends Fragment {
         TShirtViewAdapter recyclerViewAdapter = new TShirtViewAdapter(getContext(), styles);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
 
         return root;
     }
