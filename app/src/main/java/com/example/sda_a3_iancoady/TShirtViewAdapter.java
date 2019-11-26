@@ -31,16 +31,16 @@ import java.util.ArrayList;
 /*
  * @author Chris Coughlan 2019
  */
-public class FlavorViewAdapter extends RecyclerView.Adapter<FlavorViewAdapter.ViewHolder> {
+public class TShirtViewAdapter extends RecyclerView.Adapter<TShirtViewAdapter.ViewHolder> {
     private static final String TAG = "RecyclerViewAdapter";
     private Context mNewContext;
 
     //add array for each item\
-    private ArrayList<FlavorAdapter> mFlavors;
+    private ArrayList<TShirtAdapter> tShirts;
 
-    FlavorViewAdapter(Context mNewContext, ArrayList<FlavorAdapter> mflavor) {
+    TShirtViewAdapter(Context mNewContext, ArrayList<TShirtAdapter> mflavor) {
         this.mNewContext = mNewContext;
-        this.mFlavors = mflavor;
+        this.tShirts = mflavor;
     }
 
     //declare methods
@@ -55,32 +55,32 @@ public class FlavorViewAdapter extends RecyclerView.Adapter<FlavorViewAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
         Log.d(TAG, "onBindViewHolder: was called");
 
-        viewHolder.imageText.setText(mFlavors.get(position).getVersionNumber());
-        viewHolder.versionText.setText(mFlavors.get(position).getVersionName());
-        viewHolder.imageItem.setImageResource(mFlavors.get(position).getImageResourceId());
+        viewHolder.tShirtDesc.setText(tShirts.get(position).getTShirtDesc());
+        viewHolder.tShirtPrice.setText(tShirts.get(position).getTShirtPrice());
+        viewHolder.tShirtImage.setImageResource(tShirts.get(position).getImageResourceId());
 
     }
 
     @Override
     public int getItemCount() {
-        return mFlavors.size();
+        return tShirts.size();
     }
 
     //viewholder class
     class ViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView imageItem;
-        TextView imageText;
-        TextView versionText;
+        ImageView tShirtImage;
+        TextView tShirtDesc;
+        TextView tShirtPrice;
         RelativeLayout itemParentLayout;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             //grab the image, the text and the layout id's
-            imageItem = itemView.findViewById(R.id.imageItem);
-            imageText = itemView.findViewById(R.id.flavorText);
-            versionText = itemView.findViewById(R.id.flavorVers);
+            tShirtImage = itemView.findViewById(R.id.imageItem);
+            tShirtDesc = itemView.findViewById(R.id.shirtDesc);
+            tShirtPrice = itemView.findViewById(R.id.shirtPrice);
             itemParentLayout = itemView.findViewById(R.id.listItemLayout);
 
         }

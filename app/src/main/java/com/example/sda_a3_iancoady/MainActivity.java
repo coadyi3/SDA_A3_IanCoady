@@ -3,7 +3,12 @@ package com.example.sda_a3_iancoady;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
+
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
 import com.google.android.material.tabs.TabLayout;
 
 /*
@@ -28,5 +33,7 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
+        Context context = getApplicationContext();
+        Toast.makeText(context, "Please swipe to see products!", Toast.LENGTH_LONG).show();
     }
 }

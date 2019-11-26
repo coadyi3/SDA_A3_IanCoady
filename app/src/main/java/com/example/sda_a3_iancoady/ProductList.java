@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class ProductList extends Fragment {
 
     private static final String TAG = "RecyclerViewActivity";
-    private ArrayList<FlavorAdapter> mFlavor = new ArrayList<>();
+    private ArrayList<TShirtAdapter> styles = new ArrayList<>();
 
     public ProductList() {
         // Required empty public constructor
@@ -34,21 +34,19 @@ public class ProductList extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_product_list, container, false);
         // Create an ArrayList of AndroidFlavor objects
-        mFlavor.add(new FlavorAdapter("Donut", "1.6", R.drawable.donut));
-        mFlavor.add(new FlavorAdapter("Eclair", "2.0-2.1", R.drawable.eclair));
-        mFlavor.add(new FlavorAdapter("Froyo", "2.2-2.2.3", R.drawable.froyo));
-        mFlavor.add(new FlavorAdapter("GingerBread", "2.3-2.3.7", R.drawable.gingerbread));
-        mFlavor.add(new FlavorAdapter("Honeycomb", "3.0-3.2.6", R.drawable.honeycomb));
-        mFlavor.add(new FlavorAdapter("Ice Cream Sandwich", "4.0-4.0.4", R.drawable.icecream));
-        mFlavor.add(new FlavorAdapter("Jelly Bean", "4.1-4.3.1", R.drawable.jellybean));
-        mFlavor.add(new FlavorAdapter("KitKat", "4.4-4.4.4", R.drawable.kitkat));
-        mFlavor.add(new FlavorAdapter("Lollipop", "5.0-5.1.1", R.drawable.lollipop));
-        mFlavor.add(new FlavorAdapter("Marshmallow", "6.0-6.0.1", R.drawable.marshmallow));
+        styles.add(new TShirtAdapter("Black", "5€", R.drawable.black));
+        styles.add(new TShirtAdapter("Blue", "2.50€", R.drawable.blue));
+        styles.add(new TShirtAdapter("Yellow", "3€", R.drawable.yellow));
+        styles.add(new TShirtAdapter("Red", "6€", R.drawable.red));
+        styles.add(new TShirtAdapter("Pink", "10€", R.drawable.pink));
+        styles.add(new TShirtAdapter("Orange", "7.50€", R.drawable.orange));
+        styles.add(new TShirtAdapter("White", "1€", R.drawable.white));
+        styles.add(new TShirtAdapter("Green", "12€", R.drawable.green));
 
         //start it with the view
         Log.d(TAG, "Starting recycler view");
         RecyclerView recyclerView = root.findViewById(R.id.recyclerView_view);
-        FlavorViewAdapter recyclerViewAdapter = new FlavorViewAdapter(getContext(), mFlavor);
+        TShirtViewAdapter recyclerViewAdapter = new TShirtViewAdapter(getContext(), styles);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 

@@ -9,9 +9,9 @@
     <item>14</item>
     </string-array>
 
-    <string name="images_desc">Flavors Images</string>
-    <string name="plc_version">version</string>
-    <string name="plc_flavor">flavor</string>
+    <string name="images_desc">T Shirts</string>
+    <string name="img_desc">T Shirt</string>
+    <string name="img_price">Price</string>
     <string name="placeholder">Order T shirt</string>
 
     <string name="customer_name">Name</string>

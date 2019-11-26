@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="wrap_content"
     android:padding="15dp"
     android:id="@+id/listItemLayout">
@@ -8,11 +9,12 @@
         android:id="@+id/imageItem"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@drawable/donut"
-        android:contentDescription="@string/images_desc" />
+        android:contentDescription="@string/images_desc"
+        android:src="@drawable/black"
+        />
 
     <TextView
-        android:id="@+id/flavorText"
+        android:id="@+id/shirtDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -20,20 +22,20 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="18dp"
         android:layout_toEndOf="@+id/imageItem"
-        android:text="@string/plc_flavor"
+        android:text="@string/img_desc"
         android:textColor="@color/TabText"
         android:textSize="17sp" />
 
     <TextView
-        android:id="@+id/flavorVers"
+        android:id="@+id/shirtPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/flavorText"
+        android:layout_below="@+id/shirtDesc"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="18dp"
         android:layout_toEndOf="@+id/imageItem"
-        android:text="@string/plc_version"
+        android:text="@string/img_price"
         android:textColor="@color/TabText"
         android:textSize="17sp" />
 

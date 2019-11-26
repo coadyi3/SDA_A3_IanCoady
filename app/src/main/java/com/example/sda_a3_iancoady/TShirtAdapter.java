@@ -17,54 +17,54 @@ package com.example.sda_a3_iancoady;
 
 
 /**
- * {@link FlavorAdapter} represents a single Android platform release.
+ * {@link TShirtAdapter} represents a single Android platform release.
  * Each object has 3 properties: name, version number, and image resource ID.
  * This is a basic arrayAdapter
  */
-public class FlavorAdapter {
+public class TShirtAdapter {
 
     // Name of the Android version (e.g. Gingerbread, Honeycomb, Ice Cream Sandwich)
-    private String mVersionName;
+    private String tStyleName;
 
     // Android version number (e.g. 2.3-2.7, 3.0-3.2.6, 4.0-4.0.4)
-    private String mVersionNumber;
+    private String tPrice;
 
     // Drawable resource ID
-    private int mImageResourceId;
+    private int tImage;
 
     /*
-     * Create a new FlavorAdapter object.
+     * Create a new TShirtAdapter object.
      * @param vName is the name of the Android version (e.g. Gingerbread)
      * @param vNumber is the corresponding Android version number (e.g. 2.3-2.7)
      * @param image is drawable reference ID that corresponds to the Android version
      *
      * */
-    public FlavorAdapter(String vName, String vNumber, int imageResourceId)
+    public TShirtAdapter(String vName, String vNumber, int imageResourceId)
     {
-        mVersionName = vName;
-        mVersionNumber = vNumber;
-        mImageResourceId = imageResourceId;
+        tStyleName = vName;
+        tPrice = vNumber;
+        tImage = imageResourceId;
     }
 
     /**
      * Get the name of the Android version
      */
-    public String getVersionName() {
-        return mVersionName;
+    public String getTShirtDesc() {
+        return tStyleName;
     }
 
     /**
      * Get the Android version number
      */
-    public String getVersionNumber() {
-        return mVersionNumber;
+    public String getTShirtPrice() {
+        return tPrice;
     }
 
     /**
      * Get the image resource ID
      */
     public int getImageResourceId() {
-        return mImageResourceId;
+        return tImage;
     }
 
 }
