@@ -15,7 +15,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -35,14 +38,19 @@ public class OrderTshirt extends Fragment {
     }
 
     //class wide variables
-    private String mPhotoPath;
-    private Spinner mSpinner;
-    private EditText mCustomerName;
-    private EditText meditDelivery;
-    private ImageView mCameraImage;
+    private String              mPhotoPath;
+    private Spinner             mSpinner;
+    private EditText            mCustomerName;
+    private EditText            meditDelivery;
+    private RadioGroup          deliveryOption;
+    private RadioButton         collection;
+    private RadioButton         Delivery;
+    private ImageView           mCameraImage;
+    private int                 cameraClicked = 0;
+    private TextView            deliveryText;
 
     //static keys
-    private static final int REQUEST_TAKE_PHOTO = 2;
+    private static final int    REQUEST_TAKE_PHOTO = 2;
     private static final String TAG = "OrderTshirt";
 
     @Override
@@ -56,6 +64,10 @@ public class OrderTshirt extends Fragment {
         meditDelivery = root.findViewById(R.id.editDeliver);
         meditDelivery.setImeOptions(EditorInfo.IME_ACTION_DONE);
         meditDelivery.setRawInputType(InputType.TYPE_CLASS_TEXT);
+        deliveryOption = root.findViewById(R.id.deliveryOptions);
+        collection = root.findViewById(R.id.collectionRadio);
+        Delivery = root.findViewById(R.id.deliveryRadio);
+        deliveryText = root.findViewById(R.id.editCollect);
 
         mCameraImage = root.findViewById(R.id.imageView);;
         Button mSendButton = root.findViewById(R.id.sendButton);
@@ -64,6 +76,7 @@ public class OrderTshirt extends Fragment {
         mCameraImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cameraClicked++;
                 dispatchTakePictureIntent(v);
             }
         });
@@ -76,6 +89,22 @@ public class OrderTshirt extends Fragment {
             }
         });
 
+        deliveryOption.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(collection.isChecked()){
+                    meditDelivery.setVisibility(View.INVISIBLE);
+                    mSpinner.setVisibility(View.VISIBLE);
+                    deliveryText.setVisibility(View.VISIBLE);
+                }
+
+                else if(Delivery.isChecked()){
+                    meditDelivery.setVisibility(View.VISIBLE);
+                    mSpinner.setVisibility(View.INVISIBLE);
+                    deliveryText.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
 
         //initialise spinner using the integer array
         mSpinner = root.findViewById(R.id.spinner);
@@ -131,7 +160,7 @@ public class OrderTshirt extends Fragment {
     {
         //check that Name is not empty, and ask do they want to continue
         String customerName = mCustomerName.getText().toString();
-        if (mCustomerName == null || customerName.equals(""))
+        if (mCustomerName == null || customerName.equals("") ||  cameraClicked == 0)
         {
             Toast.makeText(getContext(), "Please enter your name", Toast.LENGTH_SHORT).show();
 
