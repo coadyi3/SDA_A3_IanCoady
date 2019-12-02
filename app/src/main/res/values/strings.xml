@@ -1,12 +1,11 @@
 <resources>
     <string name="app_name">SDA Assign3 2019 Ian Coady</string>
     <string-array name="ui_time_entries">
+    <item>" 1"</item>
     <item>" 2"</item>
     <item>" 3"</item>
     <item>" 4"</item>
     <item>" 5"</item>
-    <item>10</item>
-    <item>14</item>
     </string-array>
 
     <string name="images_desc">T Shirts</string>
@@ -23,5 +22,6 @@
     <string name="email_subject">Order Request </string>
     <string name="border">border</string>
     <string name="logo">Logo</string>
+    <string name="order_message_delivered">Please deliver my TShirt to the following address:</string>
 
 </resources>
