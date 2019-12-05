@@ -24,7 +24,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="18dp"
         android:layout_toEndOf="@+id/imageItem"
-        android:text="@string/img_desc"
+        android:text="@string/images_desc"
         android:textColor="@color/TabText"
         android:textSize="17sp" />
 

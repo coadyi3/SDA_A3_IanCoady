@@ -15,11 +15,13 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     private Context context;
 
-    ViewPagerAdapter(@NonNull FragmentManager fm, int behavior, Context nContext) {
-        super(fm, behavior);
+    ViewPagerAdapter(@NonNull FragmentManager fragment, int behavior, Context nContext) {
+        super(fragment, behavior);
         context = nContext;
     }
 
+
+    //Decides what fragment activity to call based on what fragment is active at the time of swiping.
     @NonNull
     @Override
     public Fragment getItem(int position) {
@@ -50,11 +52,14 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         return fragment;
     }
 
+    //Total number of tabs in the pagerview
     @Override
     public int getCount() {
         return 3;
     }
 
+
+    //Set's the title of each fragment in the pagerview
     @Override
     public CharSequence getPageTitle(int position) {
         position = position+1;
@@ -66,17 +71,16 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         {
             case 1:
                 //code
-                tabTitle = "Welcome";
+                tabTitle = context.getString(R.string.tab1);
                 break;
             case 2:
                 //code
-                tabTitle = "Products";
+                tabTitle = context.getString(R.string.tab2);
                 break;
             case 3:
                 //code
-                tabTitle = "Order";
+                tabTitle = context.getString(R.string.tab3);
                 break;
-
         }
 
         return tabTitle;

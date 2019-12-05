@@ -15,9 +15,6 @@ package com.example.sda_a3_iancoady;
 * limitations under the License.
 */
 
-
-import android.view.View;
-
 /**
  * {@link TShirtAdapter} represents a single Android platform release.
  * Each object has 3 properties: name, version number, and image resource ID.
@@ -25,10 +22,10 @@ import android.view.View;
  */
 public class TShirtAdapter {
 
-    // Name of the Android version (e.g. Gingerbread, Honeycomb, Ice Cream Sandwich)
+    // style of tshirt
     private String tStyleName;
 
-    // Android version number (e.g. 2.3-2.7, 3.0-3.2.6, 4.0-4.0.4)
+    // price of tshirt
     private String tPrice;
 
     // Drawable resource ID
@@ -36,33 +33,33 @@ public class TShirtAdapter {
 
     /*
      * Create a new TShirtAdapter object.
-     * @param vName is the name of the Android version (e.g. Gingerbread)
-     * @param vNumber is the corresponding Android version number (e.g. 2.3-2.7)
-     * @param image is drawable reference ID that corresponds to the Android version
+     * @param tName is the name of the tshirt style
+     * @param tPriceVal is the corresponding price for that style
+     * @param image is drawable reference ID that corresponds to image of the style of tshirt
      *
      * */
-    public TShirtAdapter(String vName, String vNumber, int imageResourceId)
+    public TShirtAdapter(String tName, String tPriceVal, int imageResourceId)
     {
-        tStyleName = vName;
-        tPrice = vNumber;
+        tStyleName = tName;
+        tPrice = tPriceVal;
         tImage = imageResourceId;
     }
 
-    /**
-     * Get the name of the Android version
+    /*
+     * Get the tshirt style
      */
     public String getTShirtDesc() {
         return tStyleName;
     }
 
-    /**
-     * Get the Android version number
+    /*
+     * Get the tshirt price
      */
     public String getTShirtPrice() {
         return tPrice;
     }
 
-    /**
+    /*
      * Get the image resource ID
      */
     public int getImageResourceId() {

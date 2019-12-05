@@ -20,7 +20,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:text="SEND ORDER"
+        android:text="@string/button_text"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,14 +33,15 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="100dp"
             android:layout_marginEnd="24dp"
-            android:hint="Enter Your Delivery Address"
+            android:hint="@string/delivery_address"
             android:inputType="textMultiLine"
             android:textColor="@color/colorPrimary"
             android:textColorHint="@color/colorPrimary"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            tools:ignore="Autofill" />
 
         <EditText
             android:id="@+id/editCustomer"
@@ -49,14 +50,15 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
-            android:hint="Email"
+            android:hint="@string/customer_name"
             android:imeOptions="actionDone"
             android:inputType="text"
             android:textColor="@color/colorPrimary"
             android:textColorHint="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="Autofill" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -65,7 +67,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
-            android:contentDescription="tshirtPhoto"
+            android:contentDescription="@string/image_view_desc"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/editCustomer"
@@ -91,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
-        android:text="Take photo for T-Shirt"
+        android:text="@string/instructions"
         android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -108,7 +110,7 @@
             android:layout_marginEnd="8dp"
             android:gravity="center_vertical
 "
-            android:text="Collecting at DCUSU in (Days)"
+            android:text="@string/collection_instructions"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/spinner"
@@ -133,7 +135,7 @@
                 android:layout_marginTop="8dp"
                 android:buttonTint="#020202"
                 android:checked="true"
-                android:text="Collection" />
+                android:text="@string/collection" />
 
             <RadioButton
                 android:id="@+id/deliveryRadio"
@@ -142,7 +144,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="12dp"
                 android:buttonTint="#020202"
-                android:text="Delivery" />
+                android:text="@string/delivery" />
         </RadioGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

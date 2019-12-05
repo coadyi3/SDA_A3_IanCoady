@@ -34,13 +34,13 @@ import java.util.ArrayList;
  */
 public class TShirtViewAdapter extends RecyclerView.Adapter<TShirtViewAdapter.ViewHolder> {
     private static final String TAG = "RecyclerViewAdapter";
-    private Context mNewContext;
+    private Context tNewContext;
 
-    //add array for each item\
+    //add array for each tshirt in the list
     private ArrayList<TShirtAdapter> tShirts;
 
-    TShirtViewAdapter(Context mNewContext, ArrayList<TShirtAdapter> tShirts) {
-        this.mNewContext = mNewContext;
+    TShirtViewAdapter(Context tNewContext, ArrayList<TShirtAdapter> tShirts) {
+        this.tNewContext = tNewContext;
         this.tShirts = tShirts;
     }
 
@@ -60,10 +60,12 @@ public class TShirtViewAdapter extends RecyclerView.Adapter<TShirtViewAdapter.Vi
         viewHolder.tShirtPrice.setText(tShirts.get(position).getTShirtPrice());
         viewHolder.tShirtImage.setImageResource(tShirts.get(position).getImageResourceId());
 
+
+        //Listener to each item in the list to toast the details of the list item clicked on
         viewHolder.itemParentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mNewContext, "You clicked on the " + tShirts.get(position).getTShirtDesc() +" t-shirt which costs " + tShirts.get(position).getTShirtPrice(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(tNewContext, tNewContext.getString(R.string.tshirt_list1) + tShirts.get(position).getTShirtDesc() + tNewContext.getString(R.string.tshirt_list2) + tShirts.get(position).getTShirtPrice(), Toast.LENGTH_SHORT).show();
             }
         });
 

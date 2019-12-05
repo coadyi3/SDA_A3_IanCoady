@@ -13,6 +13,8 @@ import android.widget.Toast;
 import com.google.android.material.tabs.TabLayout;
 
 /*
+ * Main activity calls and sets the pager view adapter and sets the tabs. Also welcomes the user via toast msg and explains how to proceed with the app.
+ *
  * @author Chris Coughlan 2019
  */
 public class MainActivity extends AppCompatActivity {
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         Context context = getApplicationContext();
-        Toast.makeText(context, "Please swipe to see products!", Toast.LENGTH_LONG).show();
+        Toast.makeText(context, getString(R.string.welcome_toast_msg), Toast.LENGTH_LONG).show();
     }
 
 }

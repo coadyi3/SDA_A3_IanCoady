@@ -1,21 +1,19 @@
 <resources>
     <string name="app_name">SDA Assign3 2019 Ian Coady</string>
     <string-array name="ui_time_entries">
-    <item>" 1"</item>
-    <item>" 2"</item>
-    <item>" 3"</item>
-    <item>" 4"</item>
-    <item>" 5"</item>
+    <item>" 1 "</item>
+    <item>" 2 "</item>
+    <item>" 3 "</item>
+    <item>" 4 "</item>
+    <item>" 5 "</item>
     </string-array>
 
     <string name="images_desc">T Shirts</string>
-    <string name="img_desc">T Shirt</string>
     <string name="img_price">Price</string>
     <string name="placeholder">Order T shirt</string>
-
     <string name="customer_name">Name</string>
     <string name="order_message_1">Please find my order attached</string>
-    <string name="order_message_collect">I will collect it in&#160;</string>
+    <string name="order_message_collect">I will collect it from DCUSU in</string>
     <string name="order_message_end">Regards</string>
     <string name="notification_title">Notification!</string>
     <string name="to_email">my-tshirt@sda.ie</string>
@@ -23,5 +21,22 @@
     <string name="border">border</string>
     <string name="logo">Logo</string>
     <string name="order_message_delivered">Please deliver my TShirt to the following address:</string>
+    <string name="days"> day(s)</string>
+    <string name="Alert">Please enter a valid name and take photo</string>
+    <string name="tshirt_list1">You clicked on the </string>
+    <string name="tshirt_list2"> t-shirt which costs </string>
+    <string name="tab1">Welcome</string>
+    <string name="tab2">Products</string>
+    <string name="tab3">Order</string>
+    <string name="welcome_toast_msg">Please swipe to view products!</string>
+    <string name="order_subject">TShirt Order</string>
+    <string name="instructions">Take photo for T-Shirt</string>
+    <string name="collection_instructions">Collecting at DCUSU in (Days)</string>
+    <string name="collection">Collection</string>
+    <string name="delivery">Delivery</string>
+    <string name="image_view_desc">tshirtPhoto</string>
+    <string name="delivery_address">Enter Your Delivery Address</string>
+    <string name="button_text">SEND ORDER</string>
+    <string name="opening_greeting_message">Hello and welcome to the SDA t-shirt sales application!</string>
 
 </resources>

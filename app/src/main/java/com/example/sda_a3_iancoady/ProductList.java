@@ -36,15 +36,15 @@ public class ProductList extends Fragment {
         // Inflate the layout for this fragment
 
         View root = inflater.inflate(R.layout.fragment_product_list, container, false);
-        // Create an ArrayList of AndroidFlavor objects
-        styles.add(new TShirtAdapter("Black", "5€", R.drawable.black));
-        styles.add(new TShirtAdapter("Blue", "2.50€", R.drawable.blue));
-        styles.add(new TShirtAdapter("Yellow", "3€", R.drawable.yellow));
-        styles.add(new TShirtAdapter("Red", "6€", R.drawable.red));
-        styles.add(new TShirtAdapter("Pink", "10€", R.drawable.pink));
-        styles.add(new TShirtAdapter("Orange", "7.50€", R.drawable.orange));
-        styles.add(new TShirtAdapter("White", "1€", R.drawable.white));
-        styles.add(new TShirtAdapter("Green", "12€", R.drawable.green));
+        // Create an ArrayList of tshirt colors/styles
+        styles.add(new TShirtAdapter(" Black ", " 5€ ", R.drawable.black));
+        styles.add(new TShirtAdapter(" Blue ", " 2.50€ ", R.drawable.blue));
+        styles.add(new TShirtAdapter(" Yellow ", " 3€ ", R.drawable.yellow));
+        styles.add(new TShirtAdapter(" Red ", " 6€ ", R.drawable.red));
+        styles.add(new TShirtAdapter(" Pink ", " 10€ ", R.drawable.pink));
+        styles.add(new TShirtAdapter(" Orange ", " 7.50€ ", R.drawable.orange));
+        styles.add(new TShirtAdapter(" White ", " 1€ ", R.drawable.white));
+        styles.add(new TShirtAdapter(" Green ", " 12€ ", R.drawable.green));
 
         //start it with the view
         Log.d(TAG, "Starting recycler view");

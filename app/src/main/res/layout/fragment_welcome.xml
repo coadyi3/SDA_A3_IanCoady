@@ -29,7 +29,7 @@
         android:focusable="true"
         android:fontFamily="@font/alfa_slab_one"
         android:gravity="center_horizontal"
-        android:text="Hello and welcome to the SDA t-shirt sales application!"
+        android:text="@string/opening_greeting_message"
         android:textColor="#2196F3"
         android:textSize="28sp"
         android:textStyle="italic"
