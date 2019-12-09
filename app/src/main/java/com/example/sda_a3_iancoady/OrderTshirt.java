@@ -76,7 +76,7 @@ public class OrderTshirt extends Fragment {
 
     //class wide variables
     private Spinner             tSpinner;
-    private EditText tCustomerName;
+    private EditText            tCustomerName;
     private EditText            tEditDelivery;
     private RadioButton         collection;
     private RadioButton         delivery;
@@ -113,7 +113,7 @@ public class OrderTshirt extends Fragment {
         // Inflate the layout for this fragment get the root view.
         final View root                 = inflater.inflate(R.layout.fragment_order_tshirt, container, false);
 
-        tCustomerName = root.findViewById(R.id.editCustomer);
+        tCustomerName                   = root.findViewById(R.id.editCustomer);
         tEditDelivery                   = root.findViewById(R.id.editDeliver);
         tEditDelivery                   .setImeOptions(EditorInfo.IME_ACTION_DONE);
         tEditDelivery                   .setRawInputType(InputType.TYPE_CLASS_TEXT);
@@ -121,7 +121,7 @@ public class OrderTshirt extends Fragment {
         collection                      = root.findViewById(R.id.collectionRadio);
         delivery                        = root.findViewById(R.id.deliveryRadio);
         deliveryText                    = root.findViewById(R.id.editCollect);
-        tCameraImage = root.findViewById(R.id.imageView);
+        tCameraImage                    = root.findViewById(R.id.imageView);
         Button mSendButton              = root.findViewById(R.id.sendButton);
 
         //set a listener on the the camera image
@@ -145,12 +145,14 @@ public class OrderTshirt extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if(collection.isChecked()){
+                    tEditDelivery.setEnabled(false);
                     tEditDelivery.setVisibility(View.INVISIBLE);
                     tSpinner.setVisibility(View.VISIBLE);
                     deliveryText.setVisibility(View.VISIBLE);
                 }
 
                 else if(delivery.isChecked()){
+                    tEditDelivery.setEnabled(true);
                     tEditDelivery.setVisibility(View.VISIBLE);
                     tSpinner.setVisibility(View.INVISIBLE);
                     deliveryText.setVisibility(View.INVISIBLE);
